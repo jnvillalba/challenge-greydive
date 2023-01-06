@@ -45,7 +45,7 @@ const Home = () => {
 
   const { items } = elements ?? {};
   return (
-    <div className="App container">
+    <div className="container">
       <form onSubmit={handleOnSubmit}>
         {items
           ? items.map((item, i) => (

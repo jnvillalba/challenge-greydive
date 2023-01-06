@@ -20,6 +20,7 @@ body {
   position: relative;
 }
 
+.textbox option,
 .textbox select,
 .textbox input {
   width: 260px;
@@ -38,10 +39,12 @@ body {
   background: #1a1a1a;
 }
 
-.textbox select:valid,
+select :valid,
 .textbox input:valid {
   border-color: #26dfae;
 }
+
+
 .textbox select:valid,
 .textbox input:valid,
 .textbox select:valid ~ :is(.asterix, .icon),
@@ -89,4 +92,9 @@ body {
 
 .form-date[type="date"]::-webkit-calendar-picker-indicator {
   color-scheme: dark;
+}
+
+select:valid {
+  border-color: #26dfae;
+  outline: none;
 }
