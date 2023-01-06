@@ -1,6 +1,19 @@
 import formJSON from "./db.json";
 import { useState, useEffect } from "react";
 import FormElement from "./components/FormElement";
+import appFirebase from "./credenciales";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  deleteDoc,
+  getDoc,
+  setDoc,
+} from "firebase/firestore";
+
+const db = getFirestore(appFirebase);
 
 //TODO: add db firebase, router-dom
 
@@ -19,15 +32,24 @@ function App() {
   };
 
   const [answer, setAnswer] = useState(defaultForm);
+  const [answerList, setAnswerList] = useState([]);
+
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    setAnswer({ ...defaultForm, [name]: value });
+    setAnswer({ ...answer, [name]: value });
   };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     console.log(answer);
+    try {
+      await addDoc(collection(db, "respuestas"), {
+        ...answer,
+      });
+    } catch (error) {
+      console.log(error);
+    }
     setAnswer({ ...defaultForm });
   };
 
