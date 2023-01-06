@@ -2,11 +2,13 @@ import formJSON from "../db.json";
 import { useState, useEffect } from "react";
 import FormElement from "./FormElement";
 import appFirebase from "../credenciales";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const db = getFirestore(appFirebase);
 
 const Home = () => {
+
+//Esquema de la encuesta
   const [elements, setElement] = useState(null);
   useEffect(() => {
     setElement(formJSON);
@@ -20,6 +22,7 @@ const Home = () => {
     terms_and_conditions: "",
   };
 
+  //Respuestas de la encuesta
   const [answer, setAnswer] = useState(defaultForm);
 
   const handleOnChange = (e) => {
@@ -27,9 +30,9 @@ const Home = () => {
     setAnswer({ ...answer, [name]: value });
   };
 
+  //Envio de respuestas a la db en firebase
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    console.log(answer);
     try {
       await addDoc(collection(db, "respuestas"), {
         ...answer,

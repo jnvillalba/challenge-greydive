@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import appFirebase from "../credenciales";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const Answers = () => {
   const db = getFirestore(appFirebase);
@@ -12,12 +12,10 @@ const Answers = () => {
     const getAnswers = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "respuestas"));
-        console.log(querySnapshot);
         const docs = [];
         querySnapshot.forEach((doc) => {
           docs.push({ ...doc.data(), id: doc.id });
         });
-
         setAnswersList(docs);
       } catch (error) {
         console.log(error);
