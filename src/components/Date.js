@@ -10,7 +10,7 @@ const Date = ({ label, name, required, handleOnChange }) => {
       <div className="textbox">
       <input
         type="date"
-        className="form-control"
+        className="form-date"
         id="exampleInputPassword1"
         name={name}
         required={required}

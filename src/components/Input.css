@@ -21,7 +21,6 @@ body {
 }
 
 .textbox select,
-.textbox select option,
 .textbox input {
   width: 260px;
   height: 40px;
@@ -35,17 +34,20 @@ body {
   outline: none;
 }
 
+.textbox select option {
+  background: #1a1a1a;
+}
+
 .textbox select:valid,
 .textbox input:valid {
   border-color: #26dfae;
 }
 .textbox select:valid,
 .textbox input:valid,
-.textbox select:valid ~ :is(.asterix, .icon) ,
+.textbox select:valid ~ :is(.asterix, .icon),
 .textbox input:valid ~ :is(.asterix, .icon) {
   animation: none;
 }
-
 
 .textbox :is(select:valid) ~ .asterix,
 .textbox :is(input:valid) ~ .asterix {
@@ -79,4 +81,12 @@ body {
 .textbox .icon,
 .textbox .asterix {
   animation: shake 0.1635s 0s 3;
+}
+
+.form-date[type="date"]:focus {
+  color-scheme: dark;
+}
+
+.form-date[type="date"]::-webkit-calendar-picker-indicator {
+  color-scheme: dark;
 }
