@@ -8,9 +8,6 @@ import {
   addDoc,
   getDocs,
   doc,
-  deleteDoc,
-  getDoc,
-  setDoc,
 } from "firebase/firestore";
 
 const db = getFirestore(appFirebase);
@@ -32,8 +29,25 @@ function App() {
   };
 
   const [answer, setAnswer] = useState(defaultForm);
-  const [answerList, setAnswerList] = useState([]);
+  const [answersList, setAnswersList] = useState([]);
 
+  useEffect(() => {
+    const getAnswers = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "respuestas"));
+        console.log(querySnapshot)
+        const docs = [];
+        querySnapshot.forEach((doc) => {
+          docs.push({...doc.data(), id: doc.id });
+        });
+        
+        setAnswersList(docs);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAnswers();
+  }, []);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -67,6 +81,20 @@ function App() {
             ))
           : null}
       </form>
+      <div className="container">
+      <div className="card-body">
+        {answersList.map((list) => (
+          <div key={list.id}>
+            <p>Nombre completo: {list.full_name}</p>
+            <p>Email: {list.email}</p>
+            <p>Fecha de nacimiento: {list.birth_date}</p>
+            <p>País de origen: {list.country_of_origin}</p>
+            <p>
+              ¿Acepta los términos y condiciones?: {list.terms_and_conditions}
+            </p>
+          </div>
+        ))}
+      </div></div>
     </div>
   );
 }
