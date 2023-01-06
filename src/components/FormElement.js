@@ -6,20 +6,59 @@ import Submit from "./Submit";
 import Email from "./Email";
 import Date from "./Date";
 
-const FormElement = ({ value: { type, label, name, required, options } }) => {
+const FormElement = ({
+  form: { type, label, name, required, options },
+  handleOnChange,
+}) => {
   switch (type) {
     case "text":
-      return <Input />;
+      return (
+        <Input
+          label={label}
+          name={name}
+          required={required}
+          handleOnChange={handleOnChange}
+        />
+      );
     case "email":
-      return <Email />;
+      return (
+        <Email
+          label={label}
+          name={name}
+          required={required}
+          handleOnChange={handleOnChange}
+        />
+      );
     case "date":
-      return <Date />;
+      return (
+        <Date
+          label={label}
+          name={name}
+          required={required}
+          handleOnChange={handleOnChange}
+        />
+      );
     case "select":
-      return <Select />;
+      return (
+        <Select
+          label={label}
+          name={name}
+          required={required}
+          options={options}
+          handleOnChange={handleOnChange}
+        />
+      );
     case "checkbox":
-      return <Checkbox />;
+      return (
+        <Checkbox
+          label={label}
+          name={name}
+          required={required}
+          handleOnChange={handleOnChange}
+        />
+      );
     case "submit":
-      return <Submit />;
+      return <Submit label={label} />;
     default:
       return null;
   }

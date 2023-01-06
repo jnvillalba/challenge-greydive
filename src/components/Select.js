@@ -1,13 +1,25 @@
 import React from "react";
 
-const Select = () => {
+const Select = ({ label, name, required, options, handleOnChange }) => {
   return (
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
+    <div className="mb-3">
+      <label htmlFor="exampleInputEmail1" className="form-label">
+        {label}
+      </label>
+      <select
+        className="form-select"
+        aria-label="Default select example"
+        name={name}
+        required={required}
+        onChange={handleOnChange}
+      >
+        {options.map((option, i) => (
+          <option key={i} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 

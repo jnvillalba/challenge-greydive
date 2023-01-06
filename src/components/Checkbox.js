@@ -1,12 +1,20 @@
 import React from "react";
 
-const Checkbox = () => {
+const Checkbox = ({ label, name, required, handleOnChange }) => {
   return (
     <div className="mb-3 form-check">
-      <input type="checkbox" className="form-check-input" id="exampleCheck1" />
       <label className="form-check-label" htmlFor="exampleCheck1">
-        Check me out
+        {label}
       </label>
+
+      <input
+        type="checkbox"
+        className="form-check-input"
+        id="exampleCheck1"
+        name={name}
+        required={required}
+        onChange={handleOnChange}
+      />
     </div>
   );
 };
