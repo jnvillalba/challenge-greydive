@@ -6,19 +6,20 @@ const Select = ({ label, name, required, options, handleOnChange }) => {
       <label htmlFor="exampleInputEmail1" className="form-label">
         {label}
       </label>
-      <select
-        className="form-select"
-        aria-label="Default select example"
-        name={name}
-        required={required}
-        onChange={handleOnChange}
-      >
-        {options.map((option, i) => (
-          <option key={i} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+      <div className="textbox">
+        <select
+          className="form-select"
+          name={name}
+          required={required}
+          onChange={handleOnChange}
+        >
+          {options.map((option, i) => (
+            <option key={i} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };

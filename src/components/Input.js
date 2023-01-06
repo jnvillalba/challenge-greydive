@@ -1,4 +1,5 @@
 import React from "react";
+import './Input.css'
 
 const Input = ({ label, name, required, handleOnChange }) => {
   return (
@@ -6,14 +7,18 @@ const Input = ({ label, name, required, handleOnChange }) => {
       <label htmlFor="exampleInputPassword1" className="form-label">
         {label}
       </label>
+      <div className="textbox">
       <input
         type="text"
-        className="form-control"
+        className=""
         id="exampleInputPassword1"
         name={name}
         required={required}
         onChange={handleOnChange}
+        spellCheck ="false"
       />
+      <span className="asterix">*</span>
+      </div>
     </div>
   );
 };

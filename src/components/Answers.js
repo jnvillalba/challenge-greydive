@@ -17,18 +17,22 @@ const Answers = () => {
           docs.push({ ...doc.data(), id: doc.id });
         });
         setAnswersList(docs);
+        
       } catch (error) {
         console.log(error);
       }
     };
     getAnswers();
   }, []);
-
+  
   return (
     <div className="container">
-      <div className="card-body">
+      <h1>Respuestas: {answersList.length}</h1>
+      
+      <ul className="card-body">
         {answersList.map((list) => (
           <div key={list.id}>
+            <li>
             <p>
               <strong>Nombre completo: </strong>
               {list.full_name}
@@ -46,9 +50,10 @@ const Answers = () => {
               <strong>¿Acepta los términos y condiciones?:</strong>{" "}
               {list.terms_and_conditions}
             </p>
+            </li>
           </div>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

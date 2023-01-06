@@ -6,17 +6,17 @@ const Email = ({ label, name, required, handleOnChange }) => {
       <label htmlFor="exampleInputEmail1" className="form-label">
         {label}
       </label>
-      <input
-        type="email"
-        className="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        name={name}
-        required={required}
-        onChange={handleOnChange}
-      />
-      <div id="emailHelp" className="form-text">
-        We'll never share your email with anyone else.
+      <div className="textbox">
+        <input
+          type="email"
+          className="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          name={name}
+          required={required}
+          onChange={handleOnChange}
+        />
+        <span className="asterix">*</span>
       </div>
     </div>
   );

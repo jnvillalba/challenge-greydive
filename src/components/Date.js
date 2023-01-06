@@ -6,6 +6,8 @@ const Date = ({ label, name, required, handleOnChange }) => {
       <label htmlFor="exampleInputPassword1" className="form-label">
         {label}
       </label>
+      
+      <div className="textbox">
       <input
         type="date"
         className="form-control"
@@ -14,6 +16,7 @@ const Date = ({ label, name, required, handleOnChange }) => {
         required={required}
         onChange={handleOnChange}
       />
+      </div>
     </div>
   );
 };
