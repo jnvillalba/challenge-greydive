@@ -4,11 +4,12 @@ import FormElement from "./FormElement";
 import appFirebase from "../credenciales";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-const db = getFirestore(appFirebase);
+//TODO: validar formulario, cambiar estilo button, dar estilo a las respuestas
 
 const Home = () => {
+  const db = getFirestore(appFirebase);
 
-//Esquema de la encuesta
+  //Esquema de la encuesta
   const [elements, setElement] = useState(null);
   useEffect(() => {
     setElement(formJSON);

@@ -44,7 +44,6 @@ select :valid,
   border-color: #26dfae;
 }
 
-
 .textbox select:valid,
 .textbox input:valid,
 .textbox select:valid ~ :is(.asterix, .icon),
@@ -97,4 +96,38 @@ select :valid,
 select:valid {
   border-color: #26dfae;
   outline: none;
+}
+
+#check1 {
+  display: none;
+}
+
+span.checkbox {
+  margin-top: 5px;
+  margin-left: 5px;
+  
+}
+
+#check1label {
+  display: grid;
+}
+
+.checkbox {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  border: 3px solid #3b3b3b;
+  cursor: pointer;
+  transition: 0.375s;
+}
+
+input:checked ~ .checkbox {
+  rotate: 45deg;
+  translate: 15px -8px;
+  width: 10px;
+  border-color: #1cc39b;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
 }

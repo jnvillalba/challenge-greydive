@@ -13,7 +13,7 @@ const Select = ({ label, name, required, options, handleOnChange }) => {
           required={required}
           onChange={handleOnChange}
         >
-          <option disabled selected value="">Elige un país</option>
+          <option disabled selected value=""> Elige un país</option>
           {options.map((option, i) => (
             <option key={i} value={option.value}>
               {option.label}
