@@ -4,7 +4,6 @@ import Swal from 'sweetalert2'
 const Button = ({ label }) => {
 
   const showAlert = () => {
-    alert()
     Swal.fire({
       icon: 'success',
       title: "Respuestas Enviadas",

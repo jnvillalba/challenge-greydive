@@ -4,8 +4,8 @@ import FormElement from "./FormElement";
 import appFirebase from "../credenciales";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-//TODO: validar formulario, cambiar estilo button, dar estilo a las respuestas
-
+//TODO: validar formulario, cambiar estilo button, dar estilo a las respuestas, arreglar alerta, focus input
+//TODO: error del tipo de input ejemplo mail, animacion de carga mientras trae las respuestas
 const Home = () => {
   const db = getFirestore(appFirebase);
 
