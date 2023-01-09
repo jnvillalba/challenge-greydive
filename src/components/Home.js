@@ -4,8 +4,8 @@ import FormElement from "./FormElement";
 import appFirebase from "../credenciales";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-//TODO: cambiar estilo button, arreglar alerta, focus input
-//TODO: error del tipo de input ejemplo mail, animacion de carga mientras trae las respuestas
+//TODO: , arreglar alerta, focus input, arreglar dom, deploy
+//TODO: animacion de carga mientras trae las respuestas
 const Home = () => {
   const db = getFirestore(appFirebase);
 
@@ -32,7 +32,6 @@ const Home = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setAnswer({ ...answer, [name]: value });
-    console.log(name, value);
   };
 
   //Envio de respuestas a la db en firebase
@@ -64,7 +63,7 @@ const Home = () => {
                 />
               ))
             : null}
-          {errorMessage && <p className="col-3 error">{errorMessage}</p>}
+          {errorMessage && <p className="col-sm-3 error">{errorMessage}</p>}
         </form>
       </div>
     </div>
@@ -89,7 +88,7 @@ const validate = (answer) => {
   if (!answer.country_of_origin) {
     return "Se requiere el país de origen";
   }
-  
+
   if (answer.terms_and_conditions !== "on") {
     return "Se requiere aceptar los términos y condiciones";
   }
