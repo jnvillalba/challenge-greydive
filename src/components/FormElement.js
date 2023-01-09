@@ -8,8 +8,9 @@ import Date from "./Date";
 
 const FormElement = ({
   form: { type, label, name, required, options },
-  handleOnChange,
+  handleOnChange, error
 }) => {
+
   switch (type) {
     case "text":
       return (
@@ -58,10 +59,13 @@ const FormElement = ({
         />
       );
     case "submit":
-      return <Submit label={label} />;
+      return <Submit label={label} disabled={error}/>;
     default:
       return null;
   }
 };
+
+
+
 
 export default FormElement;

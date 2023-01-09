@@ -4,17 +4,15 @@ import FormElement from "./FormElement";
 import appFirebase from "../credenciales";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
-//TODO: validar formulario, cambiar estilo button, dar estilo a las respuestas, arreglar alerta, focus input
+//TODO: cambiar estilo button, arreglar alerta, focus input
 //TODO: error del tipo de input ejemplo mail, animacion de carga mientras trae las respuestas
 const Home = () => {
   const db = getFirestore(appFirebase);
 
-  //Esquema de la encuesta
   const [elements, setElement] = useState(null);
-  useEffect(() => {
-    setElement(formJSON);
-  }, []);
+  const [errorMessage, setErrorMessage] = useState();
 
+  //Esquema de la encuesta
   const defaultForm = {
     full_name: "",
     email: "",
@@ -25,6 +23,11 @@ const Home = () => {
 
   //Respuestas de la encuesta
   const [answer, setAnswer] = useState(defaultForm);
+
+  useEffect(() => {
+    setElement(formJSON);
+    setErrorMessage(validate(answer));
+  }, [answer]);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +40,7 @@ const Home = () => {
     try {
       await addDoc(collection(db, "respuestas"), {
         ...answer,
+        //goToLogin()
       });
     } catch (error) {
       console.log(error);
@@ -54,12 +58,38 @@ const Home = () => {
                 key={i}
                 form={item}
                 handleOnChange={handleOnChange}
+                error={errorMessage}
               />
             ))
           : null}
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
     </div>
   );
+};
+
+const validate = (answer) => {
+  if (!answer.full_name) {
+    return "Se requiere el nombre conpleto";
+  }
+  if (!answer.email) {
+    return "Se requiere el email ";
+  }
+  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(answer.email)) {
+    return "Email invalido";
+  }
+
+  if (!answer.birth_date) {
+    return "Se requiere la fecha de nacimiento ";
+  }
+
+  if (!answer.country_of_origin) {
+    return "Se requiere el país de origen";
+  }
+  if (answer.terms_and_conditions !== "on") {
+    return "Se requiere aceptar los términos y condiciones";
+  }
+
 };
 
 export default Home;
