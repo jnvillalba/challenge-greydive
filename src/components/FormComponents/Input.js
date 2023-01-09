@@ -10,7 +10,6 @@ const Input = ({ label, name, required, handleOnChange }) => {
       <div className="textbox">
       <input
         type="text"
-        className=""
         id="exampleInputPassword1"
         name={name}
         required={required}

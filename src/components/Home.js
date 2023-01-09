@@ -3,11 +3,15 @@ import { useState, useEffect } from "react";
 import FormElement from "./FormElement";
 import appFirebase from "../credenciales";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {useNavigate} from 'react-router-dom'
 
-//TODO: , arreglar alerta, focus input, arreglar dom, deploy
-//TODO: animacion de carga mientras trae las respuestas
+//TODO:   deploy
+//TODO: animacion de carga mientras trae las respuestas, cambiar nombres
 const Home = () => {
   const db = getFirestore(appFirebase);
+
+  const navigate = useNavigate()
+  const goToFinal = () => navigate('/Final')
 
   const [elements, setElement] = useState(null);
   const [errorMessage, setErrorMessage] = useState();
@@ -40,12 +44,12 @@ const Home = () => {
     try {
       await addDoc(collection(db, "respuestas"), {
         ...answer,
-        //goToLogin()
       });
     } catch (error) {
       console.log(error);
     }
     setAnswer({ ...defaultForm });
+    goToFinal()
   };
 
   const { items } = elements ?? {};

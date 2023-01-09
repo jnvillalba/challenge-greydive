@@ -9,7 +9,6 @@ const Email = ({ label, name, required, handleOnChange }) => {
       <div className="textbox">
         <input
           type="email"
-          className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           name={name}

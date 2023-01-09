@@ -135,4 +135,17 @@ input:checked ~ .checkbox {
   text-align: start;
   position: absolute;
   color: #df2666;
+  white-space: pre-line;
+}
+
+.btn:disabled{
+  color: #df2666;
+}
+
+.btn:enabled{
+  color: #1cc39b;
+  border: #1cc39b;
+
+	border-style: solid;
+	
 }
