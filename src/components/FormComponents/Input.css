@@ -13,7 +13,6 @@ body {
   place-items: center;
   background: #1a1a1a;
   color: #f9f9f9;
-  
 }
 
 .textbox {
@@ -103,9 +102,8 @@ select:valid {
 }
 
 span.checkbox {
-  margin-top: 5px;
-  margin-left: 5px;
-  
+  margin-top: 6px;
+  margin-left: 1px;
 }
 
 #check1label {
@@ -130,4 +128,11 @@ input:checked ~ .checkbox {
   border-top-color: transparent;
   border-left-color: transparent;
   border-radius: 0;
+}
+
+.error {
+  margin-top: 5px;
+  text-align: start;
+  position: absolute;
+  color: #df2666;
 }

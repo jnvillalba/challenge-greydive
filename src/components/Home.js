@@ -32,6 +32,7 @@ const Home = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setAnswer({ ...answer, [name]: value });
+    console.log(name, value);
   };
 
   //Envio de respuestas a la db en firebase
@@ -51,19 +52,21 @@ const Home = () => {
   const { items } = elements ?? {};
   return (
     <div className="container">
-      <form onSubmit={handleOnSubmit}>
-        {items
-          ? items.map((item, i) => (
-              <FormElement
-                key={i}
-                form={item}
-                handleOnChange={handleOnChange}
-                error={errorMessage}
-              />
-            ))
-          : null}
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      </form>
+      <div className="row">
+        <form onSubmit={handleOnSubmit}>
+          {items
+            ? items.map((item, i) => (
+                <FormElement
+                  key={i}
+                  form={item}
+                  handleOnChange={handleOnChange}
+                  error={errorMessage}
+                />
+              ))
+            : null}
+          {errorMessage && <p className="col-3 error">{errorMessage}</p>}
+        </form>
+      </div>
     </div>
   );
 };
@@ -86,10 +89,10 @@ const validate = (answer) => {
   if (!answer.country_of_origin) {
     return "Se requiere el país de origen";
   }
+  
   if (answer.terms_and_conditions !== "on") {
     return "Se requiere aceptar los términos y condiciones";
   }
-
 };
 
 export default Home;

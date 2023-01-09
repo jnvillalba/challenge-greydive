@@ -67,30 +67,3 @@ const Answers = () => {
 };
 
 export default Answers;
-/*
-<div className="container">
-      <h1>Respuestas: {answersList.length}</h1>
-      
-      <ul className="card-body">
-        {answersList.map((list) => (
-          <div key={list.id}>
-            <li>
-            
-            <p>
-              <strong>Email:</strong> {list.email}
-            </p>
-            <p>
-              <strong>Fecha de nacimiento:</strong> {list.birth_date}
-            </p>
-            <p>
-              <strong>País de origen:</strong> {list.country_of_origin}
-            </p>
-            <p>
-              <strong>¿Acepta los términos y condiciones?:</strong>{" "}
-              {list.terms_and_conditions}
-            </p>
-            </li>
-          </div>
-        ))}
-      </ul>
-    </div>*/

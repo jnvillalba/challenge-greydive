@@ -1,10 +1,10 @@
 import React from "react";
-import Checkbox from "./Checkbox";
-import Input from "./Input";
-import Select from "./Select";
-import Submit from "./Submit";
-import Email from "./Email";
-import Date from "./Date";
+import Checkbox from "./FormComponents/Checkbox";
+import Input from "./FormComponents/Input";
+import Select from "./FormComponents/Select";
+import Submit from "./FormComponents/Submit";
+import Email from "./FormComponents/Email";
+import Date from "./FormComponents/Date";
 
 const FormElement = ({
   form: { type, label, name, required, options },

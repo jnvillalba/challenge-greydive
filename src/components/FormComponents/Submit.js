@@ -10,17 +10,19 @@ const Button = ({ label, disabled }) => {
     });
   };
 
-  console.log(disabled)
 
   return (
-    <button
-      type="submit"
-      className="btn btn-primary"
-      disabled={disabled}
-      onClick={() => showAlert()}
-    >
-      {label}
-    </button>
+    <div>
+      
+      <button
+        type="submit"
+        className="btn"
+        disabled={disabled}
+        onClick={() => showAlert()}
+      >
+        {label}
+      </button>
+    </div>
   );
 };
 
