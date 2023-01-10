@@ -1,19 +1,27 @@
 import React from "react";
 import Swal from "sweetalert2";
+import { Link, useNavigate } from "react-router-dom";
 
 const Button = ({ label, disabled }) => {
+  const navigate = useNavigate();
+  const goToAnswers = () => navigate("/Respuestas");
   const showAlert = () => {
     Swal.fire({
       icon: "success",
       title: "Respuestas Enviadas",
-      footer: '<a href="/Respuestas">Ver respuestas</a>',
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: "Cerrar",
+      confirmButtonText: "Ver respuestas",
+    }).then(function () {
+      goToAnswers();
     });
   };
 
-
   return (
     <div>
-      
+      {showAlert()}
       <button
         type="submit"
         className="btn"
