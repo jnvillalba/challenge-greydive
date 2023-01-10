@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import appFirebase from "../credenciales";
+import appFirebase from "../Firebase";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import "./Answers.css";
 import ClipLoader from "react-spinners/ClipLoader";

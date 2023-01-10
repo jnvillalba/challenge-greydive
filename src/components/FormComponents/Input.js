@@ -1,5 +1,5 @@
 import React from "react";
-import './Input.css'
+import '../../App.css'
 
 const Input = ({ label, name, required, handleOnChange }) => {
   return (

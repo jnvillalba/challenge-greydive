@@ -1,13 +1,11 @@
 import formJSON from "../db.json";
 import { useState, useEffect } from "react";
 import FormElement from "./FormElement";
-import appFirebase from "../credenciales";
+import appFirebase from "../Firebase";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import {useNavigate} from 'react-router-dom'
 
-//TODO:   deploy
-//TODO: cambiar nombres
-const Home = () => {
+const Form = () => {
   const db = getFirestore(appFirebase);
 
   const navigate = useNavigate()
@@ -74,6 +72,8 @@ const Home = () => {
   );
 };
 
+
+//validacion de campos
 const validate = (answer) => {
   if (!answer.full_name) {
     return "Se requiere el nombre completo";
@@ -98,4 +98,4 @@ const validate = (answer) => {
   }
 };
 
-export default Home;
+export default Form;
