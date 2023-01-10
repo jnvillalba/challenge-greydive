@@ -71,7 +71,7 @@ select :valid,
 .textbox .asterix {
   position: absolute;
   top: 5px;
-  right: 20px;
+  right: 10px;
   font-size: 22px;
   pointer-events: none;
   color: #df2666;
@@ -90,6 +90,7 @@ select :valid,
 
 .form-date[type="date"]::-webkit-calendar-picker-indicator {
   color-scheme: dark;
+  margin-right: 2px;
 }
 
 select:valid {
@@ -145,7 +146,6 @@ input:checked ~ .checkbox {
 .btn:enabled {
   color: #1cc39b;
   border: #1cc39b;
-
   border-style: solid;
 }
 
