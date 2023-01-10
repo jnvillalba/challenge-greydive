@@ -8,9 +8,6 @@ import { useNavigate } from "react-router-dom";
 const Form = () => {
   const db = getFirestore(appFirebase);
 
-  const navigate = useNavigate();
-  const goToFinal = () => navigate("/Final");
-
   const [elements, setElement] = useState(null);
   const [errorMessage, setErrorMessage] = useState();
 
@@ -47,7 +44,6 @@ const Form = () => {
       console.log(error);
     }
     setAnswer({ ...defaultForm });
-    goToFinal();
   };
 
   const { items } = elements ?? {};

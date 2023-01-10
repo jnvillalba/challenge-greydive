@@ -9,10 +9,8 @@ const Button = ({ label, disabled }) => {
     Swal.fire({
       icon: "success",
       title: "Respuestas Enviadas",
-      showCancelButton: true,
+      showCancelButton: false,
       confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      cancelButtonText: "Cerrar",
       confirmButtonText: "Ver respuestas",
     }).then(function () {
       goToAnswers();

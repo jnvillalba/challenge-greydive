@@ -15,30 +15,3 @@ p {
   background: #fff;
 }
 
-.card {
-  width: 100%;
-  padding: 60px 30px;
-  position: relative;
-  border-radius: 20px;
-  box-shadow: 0 5px 25px #3b3b3b;
-}
-.card h3 {
-  color: #111;
-  margin-bottom: 50px;
-  border-left: 5px solid #1cc39b;
-  padding-left: 10px;
-  line-height: 1em;
-}
-.inputbox {
-  margin-bottom: 50px;
-  color: #3b3b3b;
-}
-
-.inputbox span {
-  position: relative;
-  top: 7px;
-  left: 1px;
-  padding-left: 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
