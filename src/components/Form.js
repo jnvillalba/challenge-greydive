@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import FormElement from "./FormElement";
 import appFirebase from "../Firebase";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const db = getFirestore(appFirebase);
 
-  const navigate = useNavigate()
-  const goToFinal = () => navigate('/Final')
+  const navigate = useNavigate();
+  const goToFinal = () => navigate("/Final");
 
   const [elements, setElement] = useState(null);
   const [errorMessage, setErrorMessage] = useState();
@@ -47,7 +47,7 @@ const Form = () => {
       console.log(error);
     }
     setAnswer({ ...defaultForm });
-    goToFinal()
+    goToFinal();
   };
 
   const { items } = elements ?? {};
@@ -65,13 +65,14 @@ const Form = () => {
                 />
               ))
             : null}
-          {errorMessage && <p className="col-sm-10 col-md-10 error">{errorMessage}</p>}
+          {errorMessage && (
+            <p className="col-sm-10 col-md-10 error">{errorMessage}</p>
+          )}
         </form>
       </div>
     </div>
   );
 };
-
 
 //validacion de campos
 const validate = (answer) => {

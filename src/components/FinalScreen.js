@@ -1,4 +1,3 @@
-import { Button } from "bootstrap";
 import React from "react";
 
 function FinalScreen() {
@@ -15,16 +14,3 @@ function FinalScreen() {
 }
 
 export default FinalScreen;
-
-/*
-<div className="card">
-      <h2 className="subscribe__title">Las respuestas fueron enviadas</h2>
-      <p className="subscribe__copy">
-        Muchas gracias por tomarse el tiempo para completar la encuesta!
-      </p>
-      <div >
-        <a href="/Respuestas">Ver respuestas</a>
-      </div>
-    </div>
-
-*/

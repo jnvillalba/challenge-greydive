@@ -1,6 +1,6 @@
 import React from "react";
 import Swal from "sweetalert2";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 
 const Button = ({ label, disabled }) => {
   const navigate = useNavigate();

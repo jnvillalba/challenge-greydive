@@ -23,9 +23,10 @@ const Answers = () => {
       } catch (error) {
         console.log(error);
       }
+
+      setLoading(false);
     };
     getAnswers();
-    setLoading(false);
   }, [answersList]);
 
   return (
