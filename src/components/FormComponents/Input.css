@@ -138,14 +138,23 @@ input:checked ~ .checkbox {
   white-space: pre-line;
 }
 
-.btn:disabled{
+.btn:disabled {
   color: #df2666;
 }
 
-.btn:enabled{
+.btn:enabled {
   color: #1cc39b;
   border: #1cc39b;
 
-	border-style: solid;
-	
+  border-style: solid;
+}
+
+.container {
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 60px;
+  padding-top: 10px;
 }

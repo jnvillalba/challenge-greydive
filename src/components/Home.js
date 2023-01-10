@@ -6,7 +6,7 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import {useNavigate} from 'react-router-dom'
 
 //TODO:   deploy
-//TODO: animacion de carga mientras trae las respuestas, cambiar nombres
+//TODO: cambiar nombres
 const Home = () => {
   const db = getFirestore(appFirebase);
 
@@ -67,7 +67,7 @@ const Home = () => {
                 />
               ))
             : null}
-          {errorMessage && <p className="col-sm-3 error">{errorMessage}</p>}
+          {errorMessage && <p className="col-sm-10 col-md-10 error">{errorMessage}</p>}
         </form>
       </div>
     </div>
@@ -76,7 +76,7 @@ const Home = () => {
 
 const validate = (answer) => {
   if (!answer.full_name) {
-    return "Se requiere el nombre conpleto";
+    return "Se requiere el nombre completo";
   }
   if (!answer.email) {
     return "Se requiere el email ";
