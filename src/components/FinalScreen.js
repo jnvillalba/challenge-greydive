@@ -1,3 +1,4 @@
+import { Button } from "bootstrap";
 import React from "react";
 
 function FinalScreen() {
@@ -8,9 +9,6 @@ function FinalScreen() {
       </h3> <div className="inputbox"></div>
       <div className="inputbox">
         <p> Muchas gracias por tomarse el tiempo para completar la encuesta!</p>
-      </div>
-      <div className="link">
-        <a href="/Respuestas">Ver respuestas</a>
       </div>
     </div>
   );

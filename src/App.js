@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter, Routes, Route}from 'react-router-dom'
 import Form from "./components/Form";
 import Answers from "./components/Answers";
-import FinalScreen from "./components/FormComponents/FinalScreen";
+import FinalScreen from "./components/FinalScreen";
 
 function App() {
   return (

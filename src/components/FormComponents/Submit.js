@@ -21,7 +21,6 @@ const Button = ({ label, disabled }) => {
 
   return (
     <div>
-      {showAlert()}
       <button
         type="submit"
         className="btn"
